@@ -1,7 +1,7 @@
-utils
+Utils
 =====
 
-Util functions for Mono modules.
+Util library for Mono modules.
 
 ## Methods
 
