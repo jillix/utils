@@ -70,6 +70,9 @@ Utils.flattenObject ({
 
 ## Changelog
 
+### `v0.1.2`
+ - Fixed typo in API function name
+
 ### `v0.1.1`
  - Fixed typo
  - Published the module on NPM
