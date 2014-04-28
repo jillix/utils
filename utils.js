@@ -46,7 +46,7 @@ var Utils = module.exports = {
      *          }
      *      }, "a.b") === "function" // true
      * */
-  , findFuntion: function (parent, dotNot) {
+  , findFunction: function (parent, dotNot) {
 
         var func = Utils.findValue (parent, dotNot);
 
@@ -129,3 +129,4 @@ var Utils = module.exports = {
         return result;
     }
 }
+
