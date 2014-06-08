@@ -1,23 +1,23 @@
 {
-    "name": "jxutils"
-  , "version": "0.1.2"
-  , "description": "jillix utils"
-  , "main": "utils.js"
-  , "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    }
-  , "repository": {
-        "type": "git"
-      , "url": "git://github.com/jillix/utils.git"
-    }
-  , "keywords": [
-        "utils"
-      , "jillix"
-    ]
-  , "author": "jillix <contact@jillix.com>"
-  , "license": "MIT"
-  , "bugs": {
-        "url": "https://github.com/jillix/utils/issues"
-    }
-  , "homepage": "https://github.com/jillix/utils"
+  "name": "jxutils",
+  "version": "0.1.3",
+  "description": "jillix utils",
+  "main": "utils.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jillix/utils.git"
+  },
+  "keywords": [
+    "utils",
+    "jillix"
+  ],
+  "author": "jillix <contact@jillix.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jillix/utils/issues"
+  },
+  "homepage": "https://github.com/jillix/utils"
 }
