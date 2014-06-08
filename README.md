@@ -86,6 +86,9 @@ c === a // false
 ```
 ## Changelog
 
+### `v0.1.3`
+ - Added `cloneObject` method.
+
 ### `v0.1.2`
  - Fixed typo in API function name
 
