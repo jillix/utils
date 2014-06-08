@@ -68,6 +68,22 @@ Utils.flattenObject ({
 }); // { a: { b: 1 } }
 ```
 
+## `cloneObject (obj)`
+Clones an object.
+
+### Arguments
+ - `@obj`: the object that should be cloned
+
+### Example
+
+```js
+var a = {hello: "world"}
+  , c = Utils.cloneObject ({
+        "hello": "world"
+    })
+  ;
+c === a // false
+```
 ## Changelog
 
 ### `v0.1.2`

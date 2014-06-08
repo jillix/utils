@@ -128,5 +128,21 @@ var Utils = module.exports = {
 
         return result;
     }
+
+    /**
+     *  cloneObject
+     *
+     *  Example
+     *
+     *      var cloned = Utils.cloneObject ({
+     *          "hello": "world"
+     *      });
+     *
+     * */
+  , cloneObject: function (obj) {
+        var c = function () {};
+        c.prototype = Object(obj);
+        return new c();
+    }
 }
 
