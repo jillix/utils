@@ -139,7 +139,7 @@ Utils.unflattenObject = function (flat) {
  *      });
  *
  * */
-Utils.cloneObject = function cloneObject(item, deepClone) {
+Utils.cloneObject = function (item, deepClone) {
     if (!deepClone) {
         var c = function () {};
         c.prototype = Object(item);
@@ -148,8 +148,8 @@ Utils.cloneObject = function cloneObject(item, deepClone) {
 
     if (!item) { return item; } // null, undefined values check
 
-    var types = [ Number, String, Boolean ],
-        result;
+    var types = [Number, String, Boolean];
+    var result;
 
     // normalizing primitives if someone did new String('aaa'), or new Number('444');
     types.forEach(function(type) {
@@ -162,12 +162,12 @@ Utils.cloneObject = function cloneObject(item, deepClone) {
         if (Object.prototype.toString.call( item ) === "[object Array]") {
             result = [];
             item.forEach(function(child, index, array) {
-                result[index] = cloneObject( child );
+                result[index] = Utils.cloneObject(child, true);
             });
         } else if (typeof item == "object") {
             // testing that this is DOM
             if (item.nodeType && typeof item.cloneNode == "function") {
-                var result = item.cloneNode( true );
+                var result = item.cloneNode(true)
             } else if (!item.prototype) { // check that this is a literal
                 if (item instanceof Date) {
                     result = new Date(item);
@@ -175,7 +175,7 @@ Utils.cloneObject = function cloneObject(item, deepClone) {
                     // it is an object literal
                     result = {};
                     for (var i in item) {
-                        result[i] = cloneObject( item[i] );
+                        result[i] = Utils.cloneObject(item[i], true);
                     }
                 }
             } else {
