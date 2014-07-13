@@ -68,11 +68,12 @@ Utils.flattenObject ({
 }); // { a: { b: 1 } }
 ```
 
-## `cloneObject (obj)`
+## `cloneObject (obj, deepClone)`
 Clones an object.
 
 ### Arguments
  - `@obj`: the object that should be cloned
+ - `@deepClone`: if `true`, the object fields will be cloned recursively
 
 ### Example
 
@@ -85,6 +86,9 @@ var a = {hello: "world"}
 c === a // false
 ```
 ## Changelog
+
+### `v0.1.4`
+ - `deepClone` in `cloneObject` method
 
 ### `v0.1.3`
  - Added `cloneObject` method.
