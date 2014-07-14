@@ -19,5 +19,12 @@
   "bugs": {
     "url": "https://github.com/jillix/utils/issues"
   },
-  "homepage": "https://github.com/jillix/utils"
+  "homepage": "https://github.com/jillix/utils",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "bug-killer": "^0.1.1"
+  },
+  "devDependencies": {}
 }
