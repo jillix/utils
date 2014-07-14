@@ -1,104 +1,79 @@
-Utils
-=====
+# Utils
+Util functions for Mono modules.
 
-Util library for Mono modules.
+# Methods
 
-## Methods
-
-## `findValue (parent, dotNot)`
+## `findValue(parent, dotNot)`
 Finds a value in parent (object) using the dot notation passed in dotNot.
 
-### Arguments
- - `@parent`: object that contains the value that must be found
- - `@dotNot`: string that represents the path in the object to the value
+### Params:
+* **Object** *parent* The object containing the searched value
+* **String** *dotNot* Path to the value
 
-### Example
+### Return:
+* **Anything** Found value or undefined
 
-```js
-Utils.findValue ({
-    a: {
-        b: 1
-    }
-}, "a.b") // 1
-```
-
-## `findFunction (parent, dotNot)`
+## `findFunction(parent, dotNot)`
 Finds a function in parent (object) using the dot notation passed in dotNot.
 
-### Arguments
- - `@parent`: object that contains the function that must be found
- - `@dotNot`: string that represents the path in the object to the function
+### Params:
+* **Object** *parent* The object containing the searched function
+* **String** *dotNot* Path to the function value
 
-### Example:
+### Return:
+* **Function** Function that was found in the parent object
 
-```js
-typeof Utils.findFunction ({
-    a: {
-        b: function () {}
-    }
-}, "a.b") // "function"
-```
-
-## `flattenObject (obj)`
+## `flattenObject(obj)`
 Converts an object to a flat one
 
-### Arguments
- - `@obj`: the object that must be converted to a flat one
+### Params:
+* **Object** *obj* The object that should be converted
 
-### Example
-```js
-Utils.flattenObject ({
-    a: {
-        b: 1
-    }
-}) // { "a.b": 1 }
-```
+### Return:
+* **Object** Flatten object
 
-## `unflattenObject (flat)`
+## `unflattenObject(flat)`
 Converts a flat object to an unflatten one
 
-### Arguments
- - `@flat`: the flatten object that must be converted to an unflatten one
+### Params:
+* **Object** *flat* The flat object that should be converted
 
-### Example
+### Return:
+* **Object** Unflatten object
 
-```js
-Utils.flattenObject ({
-    "a.b": 1
-}); // { a: { b: 1 } }
-```
+## `cloneObject(item, deepClone)`
+Clones an object
 
-## `cloneObject (obj, deepClone)`
-Clones an object.
+### Params:
+* **Object** *item* Object that should be cloned
+* **Boolean** *deepClone* If true, the subfields of the @item function will be cloned
 
-### Arguments
- - `@obj`: the object that should be cloned
- - `@deepClone`: if `true`, the object fields will be cloned recursively
+### Return:
+* **Object** The cloned object
 
-### Example
+## `slug(input)`
+Converts a string to slug
 
-```js
-var a = {hello: "world"}
-  , c = Utils.cloneObject ({
-        "hello": "world"
-    })
-  ;
-c === a // false
-```
-## Changelog
+### Params:
+* **String** *input* The input string that should be converted to slug
 
-### `v0.1.4`
+### Return:
+* **String** The slug that was generated
+
+# Changelog
+
+## `v0.1.4`
  - `deepClone` in `cloneObject` method
 
-### `v0.1.3`
+## `v0.1.3`
  - Added `cloneObject` method.
 
-### `v0.1.2`
+## `v0.1.2`
  - Fixed typo in API function name
 
-### `v0.1.1`
+## `v0.1.1`
  - Fixed typo
  - Published the module on NPM
 
-### `v0.1.0`
+## `v0.1.0`
  - Initial release
