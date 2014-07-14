@@ -6,24 +6,21 @@
 var Utils = module.exports = {};
 
 /**
- *  Find value
- *  Finds a value in parent (object) using the dot notation passed in dotNot.
+ * findValue
+ * Finds a value in parent (object) using the dot notation passed in dotNot.
  *
- *  Example:
- *
- *      Utils.findValue ({
- *          a: {
- *              b: 1
- *          }
- *      }, "a.b") === 1 // true
- * */
-Utils.findValue = function (parent, dotNot) {
+ * @name findValue
+ * @function
+ * @param {Object} parent The object containing the searched value
+ * @param {String} dotNot Path to the value
+ * @return {Anything} Found value or undefined
+ */
+Utils.findValue = function(parent, dotNot) {
 
     if (!dotNot || !dotNot) return undefined;
 
-    var splits = dotNot.split(".")
-      , value
-      ;
+    var splits = dotNot.split(".");
+    var value;
 
     for (var i = 0; i < splits.length; ++i) {
         value = parent[splits[i]];
@@ -35,17 +32,15 @@ Utils.findValue = function (parent, dotNot) {
 };
 
 /**
- *  Find function
- *  Finds a function in parent (object) using the dot notation passed in dotNot.
+ * findFunction
+ * Finds a function in parent (object) using the dot notation passed in dotNot.
  *
- *  Example:
- *
- *      typeof Utils.findFunction ({
- *          a: {
- *              b: function () {}
- *          }
- *      }, "a.b") === "function" // true
- * */
+ * @name findFunction
+ * @function
+ * @param {Object} parent The object containing the searched function
+ * @param {String} dotNot Path to the function value
+ * @return {Function} Function that was found in the parent object
+ */
 Utils.findFunction = function (parent, dotNot) {
 
     var func = Utils.findValue (parent, dotNot);
@@ -58,17 +53,14 @@ Utils.findFunction = function (parent, dotNot) {
 };
 
 /**
- *  Converts an object to a flat one
+ * flattenObject
+ * Converts an object to a flat one
  *
- *  Example
- *
- *      Utils.flattenObject ({
- *          a: {
- *              b: 1
- *          }
- *      }); // { "a.b": 1 }
- *
- * */
+ * @name flattenObject
+ * @function
+ * @param {Object} obj The object that should be converted
+ * @return {Object} Flatten object
+ */
 Utils.flattenObject = function (obj) {
 
     var result = {};
@@ -93,28 +85,25 @@ Utils.flattenObject = function (obj) {
 };
 
 /**
- *  Converts a flat object to an unflatten one
+ * unflattenObject
+ * Converts a flat object to an unflatten one
  *
- *  Example
- *
- *      Utils.flattenObject ({
- *          "a.b": 1
- *      }); // { a: { b: 1 } }
- *
- * */
+ * @name unflattenObject
+ * @function
+ * @param {Object} flat The flat object that should be converted
+ * @return {Object} Unflatten object
+ */
 Utils.unflattenObject = function (flat) {
 
-    var result = {}
-      , parentObj = result
-      ;
+    var result = {};
+    var parentObj = result;
 
     var keys = Object.keys(flat);
     for (var i = 0; i < keys.length; ++i) {
 
-        var key = keys[i]
-          , subkeys = key.split('.')
-          , last = subkeys.pop()
-          ;
+        var key = keys[i];
+        var subkeys = key.split('.');
+        var last = subkeys.pop();
 
         for (var ii = 0; ii < subkeys.length; ++ii) {
             var subkey = subkeys[ii];
@@ -130,15 +119,15 @@ Utils.unflattenObject = function (flat) {
 };
 
 /**
- *  cloneObject
+ * cloneObject
+ * Clones an object
  *
- *  Example
- *
- *      var cloned = Utils.cloneObject ({
- *          "hello": "world"
- *      });
- *
- * */
+ * @name cloneObject
+ * @function
+ * @param {Object} item Object that should be cloned
+ * @param {Boolean} deepClone If true, the subfields of the @item function will be cloned
+ * @return {Object} The cloned object
+ */
 Utils.cloneObject = function (item, deepClone) {
     if (!deepClone) {
         var c = function () {};
