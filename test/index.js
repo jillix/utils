@@ -33,9 +33,11 @@ for (var i = 0; i < tests.length; ++i) {
     var output = "\n" + cTest;
     try {
         output += JSON.stringify(eval(cTest), null, 4);
+        output += "\n";
         Debug.log(output, "success");
     } catch (e) {
         output += " - Failed. " + e.toString();
+        output += "\n";
         Debug.log(output, "error");
     }
 }
