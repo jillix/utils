@@ -62,6 +62,9 @@ Converts a string to slug
 
 # Changelog
 
+## `v0.1.5`
+ - Added `slug` method.
+
 ## `v0.1.4`
  - `deepClone` in `cloneObject` method
 
