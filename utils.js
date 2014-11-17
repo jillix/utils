@@ -156,7 +156,7 @@ Utils.cloneObject = function (item, deepClone) {
         } else if (typeof item == "object") {
             // testing that this is DOM
             if (item.nodeType && typeof item.cloneNode == "function") {
-                var result = item.cloneNode(true);
+                result = item.cloneNode(true);
             } else if (!item.prototype) { // check that this is a literal
                 if (item instanceof Date) {
                     result = new Date(item);
