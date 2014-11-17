@@ -62,6 +62,10 @@ Converts a string to slug
 
 # Changelog
 
+## `v0.1.6`
+ - Fixed `Date` objects handling.
+ - Syntax fixes.
+
 ## `v0.1.5`
  - Added `slug` method.
 
