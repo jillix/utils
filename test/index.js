@@ -2,8 +2,8 @@
 var Utils = require("../utils");
 var Debug = require("bug-killer");
 Debug._config.success = {
-    color: "#00CF06"
-  , text: "SUCCESS"
+    color: "#00CF06",
+    text: "SUCCESS"
 };
 
 // Object used for tests
@@ -12,7 +12,7 @@ var testObject = {
         b: {
             c: 1
         },
-        foo: function () {
+        foo: function() {
             return "Bar";
         }
     },

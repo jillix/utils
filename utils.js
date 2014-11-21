@@ -41,9 +41,9 @@ Utils.findValue = function(parent, dotNot) {
  * @param {String} dotNot Path to the function value
  * @return {Function} Function that was found in the parent object
  */
-Utils.findFunction = function (parent, dotNot) {
+Utils.findFunction = function(parent, dotNot) {
 
-    var func = Utils.findValue (parent, dotNot);
+    var func = Utils.findValue(parent, dotNot);
 
     if (typeof func !== "function") {
         return undefined;
@@ -61,18 +61,18 @@ Utils.findFunction = function (parent, dotNot) {
  * @param {Object} obj The object that should be converted
  * @return {Object} Flatten object
  */
-Utils.flattenObject = function (obj) {
+Utils.flattenObject = function(obj) {
 
     var result = {};
 
     for (var key in obj) {
         if (!obj.hasOwnProperty(key)) continue;
 
-        if (typeof obj[key] === 'object' && !(obj[key] instanceof Array)) {
-            var flat = Utils.flattenObject (obj[key]);
+        if (obj[key] === 'object' && obj[key].constructor === Object) {
+            var flat = Utils.flattenObject(obj[key]);
             for (var x in flat) {
                 if (!flat.hasOwnProperty(x)) {
-                     continue;
+                    continue;
                 }
 
                 result[key + '.' + x] = flat[x];
@@ -93,7 +93,7 @@ Utils.flattenObject = function (obj) {
  * @param {Object} flat The flat object that should be converted
  * @return {Object} Unflatten object
  */
-Utils.unflattenObject = function (flat) {
+Utils.unflattenObject = function(flat) {
 
     var result = {};
     var parentObj = result;
@@ -128,14 +128,16 @@ Utils.unflattenObject = function (flat) {
  * @param {Boolean} deepClone If true, the subfields of the @item function will be cloned
  * @return {Object} The cloned object
  */
-Utils.cloneObject = function (item, deepClone) {
+Utils.cloneObject = function(item, deepClone) {
     if (!deepClone) {
-        var c = function () {};
+        var c = function() {};
         c.prototype = Object(item);
         return new c();
     }
 
-    if (!item) { return item; } // null, undefined values check
+    if (!item) {
+        return item;
+    } // null, undefined values check
 
     var types = [Number, String, Boolean];
     var result;
@@ -143,12 +145,12 @@ Utils.cloneObject = function (item, deepClone) {
     // normalizing primitives if someone did new String('aaa'), or new Number('444');
     types.forEach(function(type) {
         if (item instanceof type) {
-            result = type( item );
+            result = type(item);
         }
     });
 
     if (typeof result == "undefined") {
-        if (Object.prototype.toString.call( item ) === "[object Array]") {
+        if (Object.prototype.toString.call(item) === "[object Array]") {
             result = [];
             item.forEach(function(child, index, array) {
                 result[index] = Utils.cloneObject(child, true);
@@ -156,7 +158,7 @@ Utils.cloneObject = function (item, deepClone) {
         } else if (typeof item == "object") {
             // testing that this is DOM
             if (item.nodeType && typeof item.cloneNode == "function") {
-                var result = item.cloneNode(true)
+                result = item.cloneNode(true);
             } else if (!item.prototype) { // check that this is a literal
                 if (item instanceof Date) {
                     result = new Date(item);
@@ -194,6 +196,6 @@ Utils.cloneObject = function (item, deepClone) {
  * @param {String} input The input string that should be converted to slug
  * @return {String} The slug that was generated
  */
-Utils.slug = function (input) {
+Utils.slug = function(input) {
     return input.replace(/[^A-Za-z0-9-]+/g, '-').toLowerCase();
 };
