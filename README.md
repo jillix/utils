@@ -61,6 +61,10 @@ Converts a string to slug
 * **String** The slug that was generated
 
 # Changelog
+## `v0.1.7`
+ - Moved `bug-killer` in `devDependencies`.
+ - Upgraded to `bug-killer@1.0.0`.
+ - Fixed the test script.
 
 ## `v0.1.6`
  - Fixed `Date` objects handling.
