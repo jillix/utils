@@ -14,7 +14,7 @@
     "utils",
     "jillix"
   ],
-  "author": "jillix <contact@jillix.com>",
+  "author": "jillix <contact@jillix.com> http://jillix.com",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jillix/utils/issues"
@@ -23,8 +23,8 @@
   "directories": {
     "test": "test"
   },
-  "dependencies": {
-    "bug-killer": "^0.1.1"
-  },
-  "devDependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "bug-killer": "1.0.0"
+  }
 }
