@@ -1,9 +1,9 @@
 // Dependencies
 var Utils = require("../utils");
 var Debug = require("bug-killer");
-Debug._config.success = {
+Debug.config.success = {
     color: "#00CF06",
-    text: "SUCCESS"
+    text: "success"
 };
 
 // Object used for tests
