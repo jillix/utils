@@ -20,12 +20,12 @@ var testObject = {
 };
 
 var tests = [
-    "Utils.findValue('testObject', 'a.b')",
-    "Utils.findFunction('testObject', 'a.foo')",
-    "Utils.flattenObject('testObject')",
-    "Utils.unflattenObject('testObject')",
-    "Utils.cloneObject('testObject', true)",
-    "Utils.cloneObject('testObject')"
+    "Utils.findValue(testObject, 'a.b')",
+    "Utils.findFunction(testObject, 'a.foo')",
+    "Utils.flattenObject(testObject)",
+    "Utils.unflattenObject(testObject)",
+    "Utils.cloneObject(testObject, true)",
+    "Utils.cloneObject(testObject)"
 ];
 
 for (var i = 0; i < tests.length; ++i) {
