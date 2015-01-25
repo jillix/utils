@@ -61,6 +61,9 @@ Converts a string to slug
 * **String** The slug that was generated
 
 # Changelog
+## `v0.1.8`
+ - Fixed the broken flattenObject method.
+
 ## `v0.1.7`
  - Moved `bug-killer` in `devDependencies`.
  - Upgraded to `bug-killer@1.0.0`.

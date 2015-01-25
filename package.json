@@ -1,6 +1,6 @@
 {
   "name": "jxutils",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "jillix utils",
   "main": "utils.js",
   "scripts": {
