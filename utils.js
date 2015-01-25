@@ -68,7 +68,8 @@ Utils.flattenObject = function(obj) {
     for (var key in obj) {
         if (!obj.hasOwnProperty(key)) continue;
 
-        if (obj[key] === 'object' && obj[key].constructor === Object) {
+        if (typeof obj[key] === 'object' && obj[key].constructor === Object) {
+
             var flat = Utils.flattenObject(obj[key]);
             for (var x in flat) {
                 if (!flat.hasOwnProperty(x)) {
