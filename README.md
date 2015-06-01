@@ -61,6 +61,9 @@ Converts a string to slug
 * **String** The slug that was generated
 
 # Changelog
+## `v0.2.0`
+ - transferred module to the new jxMono organization
+
 ## `v0.1.8`
  - Fixed the broken flattenObject method.
 
