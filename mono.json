@@ -1,6 +1,6 @@
 {
     "source": "github",
-    "owner": "jillix",
+    "owner": "jxmono",
     "name": "utils",
     "dependencies": [
         "/utils.js"
